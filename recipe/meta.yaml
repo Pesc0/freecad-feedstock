@@ -13,7 +13,7 @@ source:
         - osx.patch  # [osx]
 
 build:
-    number: 39
+    number: 40
 
 requirements:
     build:
