@@ -1,5 +1,5 @@
 {% set name = "freecad" %}
-{% set version = "0.19.pre" %}
+{% set version = "0.18.2" %}
 
 package:
     name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
     git_url: https://github.com/FreeCAD/FreeCAD
-    git_tag: master
+    git_tag: 0.18.2
 
 build:
-    number: 13
+    number: 0
     skip: true  # [py<37]
 
 requirements:
@@ -30,10 +30,10 @@ requirements:
         - ninja
         - git
     host:
-        - boost-cpp
+        - boost-cpp 1.68
         - python
         - qt
-        - occt
+        - occt 7.2
         - xerces-c
         - zlib
         - vtk
@@ -56,7 +56,7 @@ requirements:
     run:
         - {{ pin_compatible("pyside2") }}
         - vtk
-        - occt
+        - occt 7.2
         - qt
         - xerces-c
         - zlib
