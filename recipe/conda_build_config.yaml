@@ -1,6 +1,8 @@
 channel_sources:
-- freecad,conda-forge,defaults
+- freecad/label/qt4,conda-forge,defaults
 channel_targets:
-- freecad dev
+- freecad qt4
 MACOSX_DEPLOYMENT_TARGET:  # [osx]
 - '10.12'                  # [osx]
+qt:
+- '4.8'
