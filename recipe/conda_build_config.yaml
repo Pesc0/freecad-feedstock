@@ -7,4 +7,6 @@ MACOSX_DEPLOYMENT_TARGET:  # [osx]
 qt:
 - '4.8'
 freetype:
-- 2.8.1
+- 2.7.*
+vtk:
+- 8.1.*

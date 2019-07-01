@@ -11,7 +11,7 @@ cxx_compiler_version:
 docker_image:
 - condaforge/linux-anvil-comp7
 freetype:
-- 2.8.1
+- 2.7.*
 hdf5:
 - 1.10.5
 occt:
@@ -39,7 +39,7 @@ python:
 qt:
 - '4.8'
 vtk:
-- 8.2.0
+- 8.1.*
 xerces_c:
 - 3.2.2
 zlib:

@@ -45,8 +45,8 @@ requirements:
         - coin3d
         - pivy
         - pyside
-        - smesh
-        - netgen
+        # - smesh
+        # - netgen
         - doxygen
         - hdf5
         - xorg-libxi  # [linux]
@@ -67,8 +67,8 @@ requirements:
         - python
         - coin3d
         - pivy
-        - smesh
-        - netgen
+        # - smesh
+        # - netgen
         - xorg-libxi  # [linux]
         - xorg-libxmu  # [linux]
         - xorg-libxt  # [linux]

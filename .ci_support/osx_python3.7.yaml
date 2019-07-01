@@ -11,7 +11,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '4'
 freetype:
-- 2.8.1
+- 2.7.*
 hdf5:
 - 1.10.5
 macos_machine:
@@ -43,7 +43,7 @@ python:
 qt:
 - '4.8'
 vtk:
-- 8.2.0
+- 8.1.*
 xerces_c:
 - 3.2.2
 zlib:
