@@ -14,5 +14,5 @@ python:
 - 3.6
 hdf5:
 - 1.10.4
-boost:
-- 1.68
+boost_cpp:
+- 1.68.0

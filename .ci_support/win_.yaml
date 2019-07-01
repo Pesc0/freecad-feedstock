@@ -1,5 +1,5 @@
 boost_cpp:
-- 1.70.0
+- 1.68.0
 channel_sources:
 - freecad/label/qt4,conda-forge,defaults
 channel_targets:
