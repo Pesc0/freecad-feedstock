@@ -8,11 +8,10 @@ package:
 source:
     git_url: https://github.com/FreeCAD/FreeCAD
     git_tag: master
-    patches:
-        - win_snprintf.patch
 
 build:
-    number: 22
+    number: 0
+    skip: true  # [osx or win]
 
 requirements:
     build:
@@ -44,8 +43,8 @@ requirements:
         - coin3d
         - pivy
         - pyside
-        # - smesh
-        # - netgen
+        - smesh
+        - netgen
         - doxygen
         - hdf5
         - xorg-libxi  # [linux]
@@ -66,8 +65,8 @@ requirements:
         - python
         - coin3d
         - pivy
-        # - smesh
-        # - netgen
+        - smesh
+        - netgen
         - xorg-libxi  # [linux]
         - xorg-libxmu  # [linux]
         - xorg-libxt  # [linux]
