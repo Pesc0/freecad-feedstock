@@ -10,3 +10,5 @@ freetype:
 - 2.7.*
 vtk:
 - 8.1.*
+python:
+- 3.6
