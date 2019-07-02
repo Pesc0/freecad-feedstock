@@ -34,6 +34,7 @@ cmake -G "Ninja" \
       -D BUILD_DYNAMIC_LINK_PYTHON:BOOL=OFF \
       -D Boost_NO_BOOST_CMAKE:BOOL=ON \
       -D BUILD_FEM:BOOL=OFF \
+      -D BUILD_TECHDRAW:BOOL=OFF \
       ..
 
 ninja install
