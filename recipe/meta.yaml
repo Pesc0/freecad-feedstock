@@ -14,6 +14,8 @@ source:
 
 build:
     number: 0
+    features:
+        - qt4
 
 requirements:
     build:
@@ -68,9 +70,9 @@ requirements:
         - xorg-libxt  # [linux]
         - six
 
-test:
-    commands:
-        - FreeCADCmd -t 0
+# test:
+#     commands:
+#         - FreeCADCmd -t 0
 
 about:
     home: https://www.freecadweb.org/
