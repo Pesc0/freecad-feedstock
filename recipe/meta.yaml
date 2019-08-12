@@ -66,6 +66,7 @@ requirements:
         - xorg-libxi  # [linux]
         - xorg-libxmu  # [linux]
         - xorg-libxt  # [linux]
+        - six
 
 test:
     commands:
