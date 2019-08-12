@@ -46,17 +46,15 @@ requirements:
         - xorg-libxi  # [linux]
         - xorg-libxmu  # [linux]
         - xorg-libxt  # [linux]
-        - blas * openblas
     run:
         - {{ pin_compatible("pyside") }}
-        - occt
+        - {{ pin_compatible("occt") }}
         - {{ pin_compatible("vtk") }}
+        - {{ pin_compatible("hdf5") }}
         - qt
-        - qtwebkit  # [osx]
         - xerces-c
         - zlib
         - boost-cpp
-        - hdf5
         - python
         - numpy
         - coin3d
