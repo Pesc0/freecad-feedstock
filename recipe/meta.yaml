@@ -37,7 +37,7 @@ requirements:
         - matplotlib
         - coin3d
         - pivy
-        - pyside2
+        - pyside
         - smesh
         - netgen 6.2.1808
         - doxygen
@@ -49,7 +49,7 @@ requirements:
         - xorg-libxt  # [linux]
         - blas * openblas
     run:
-        - {{ pin_compatible("pyside2") }}
+        - {{ pin_compatible("pyside") }}
         - occt
         - vtk
         - qt
