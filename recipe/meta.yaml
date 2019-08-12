@@ -34,7 +34,6 @@ requirements:
         - swig
         - eigen
         - pybind11
-        - matplotlib
         - coin3d
         - pivy
         - pyside
@@ -60,7 +59,6 @@ requirements:
         - hdf5
         - python
         - numpy
-        - matplotlib
         - coin3d
         - pivy
         - smesh
