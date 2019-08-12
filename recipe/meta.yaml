@@ -38,7 +38,7 @@ requirements:
         - pivy
         - pyside
         - smesh
-        - netgen 6.2.1808
+        - netgen 6.2.1804
         - doxygen
         - hdf5
         - libglu  # [linux]
@@ -60,7 +60,7 @@ requirements:
         - coin3d
         - pivy
         - smesh
-        - netgen 6.2.1808
+        - netgen 6.2.1804
         - libglu  # [linux]
         - mesalib  # [linux]
         - xorg-libxi  # [linux]
