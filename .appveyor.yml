@@ -39,6 +39,7 @@ install:
     - cmd: conda.exe config --set show_channel_urls true
     - cmd: conda.exe config --remove channels defaults
     - cmd: conda.exe config --add channels defaults
+    - cmd: conda.exe config --add channels freecad/label/qt4
     - cmd: conda.exe config --add channels conda-forge/label/cf201901
 
     # Configure the VM.
