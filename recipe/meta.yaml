@@ -40,7 +40,7 @@ requirements:
         - smesh
         - netgen 6.2.1808
         - doxygen
-        - hdf5 1.10.1
+        - hdf5
         - libglu  # [linux]
         - mesalib  # [linux]
         - xorg-libxi  # [linux]
