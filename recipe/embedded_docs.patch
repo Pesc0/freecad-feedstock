@@ -1,95 +1,64 @@
-commit f1004248ca997618e82d298592932c32c050c910
-Author: triplus <triplus@users.noreply.github.com>
-Date:   Sun Oct 6 18:18:29 2019 +0200
-
-    AppImage - support for embedded documentation
-
 diff --git a/src/Gui/Assistant.cpp b/src/Gui/Assistant.cpp
-index 629e88a88..d999471e1 100644
+index d999471e1..894af9954 100644
 --- a/src/Gui/Assistant.cpp
 +++ b/src/Gui/Assistant.cpp
-@@ -99,32 +99,6 @@ bool Assistant::startAssistant()
+@@ -99,7 +99,6 @@ bool Assistant::startAssistant()
          QString doc = QString::fromUtf8(App::Application::getHelpDir().c_str());
          QString qhc = doc + exe.toLower() + QLatin1String(".qhc");
  
+-
+         QFileInfo fi(qhc);
+         if (!fi.isReadable()) {
+             QMessageBox::critical(0, tr("%1 Help").arg(exe),
+@@ -113,51 +112,6 @@ bool Assistant::startAssistant()
+             first = false;
+         }
+ 
+-        // AppImage start
 -        // AppImage mount location changes on each start. Assistant caches freecad.qhc
 -        // file and sets an absolute path. As a result embedded documentation only works
--        // on the first AppImage start. Register the .gch file, to overcome the issue.
+-        // on the first AppImage (help) run. Register the .gch file, to overcome the issue.
 -        static bool start = true;
 -        if (start) {
 -            char* appimage = getenv("APPIMAGE");
 -            if (appimage) {
 -                QString qch = doc + exe.toLower() + QLatin1String(".qch");
 -                QFileInfo fi(qch);
--                if (!fi.isReadable()) {
--                    QMessageBox::critical(0, tr("%1 Help").arg(exe),
--                        tr("%1 help files not found (%2). You might need to install the %1 documentation package.").arg(exe, qch));
--                    return false;
--                }
--                Base::Console().Log("Help file at %s\n", (const char*)qch.toUtf8());
--                QStringList args;
--                args << QLatin1String("-register") << qch;
--                proc->start(app, args);
--                if (!proc->waitForFinished(50000)) {
--                    QMessageBox::critical(0, tr("%1 Help").arg(exe),
--                        tr("Unable to launch Qt Assistant (%1)").arg(app));
--                    return false;
+-                if (fi.isReadable()) {
+-                    // Assume documentation is embedded
+-                    // Unregister qch file (path) from previous AppImage run
+-                    QStringList args;
+-
+-                    args << QLatin1String("-collectionFile") << qhc
+-                         << QLatin1String("-unregister") << qch;
+-
+-                    proc->start(app, args);
+-
+-                    if (!proc->waitForFinished(50000)) {
+-                        QMessageBox::critical(0, tr("%1 Help").arg(exe),
+-                            tr("Unable to launch Qt Assistant (%1)").arg(app));
+-                        return false;
+-                    }
+-
+-                    // Register qch file (path) for current AppImage run
+-                    args.clear();
+-
+-                    args << QLatin1String("-collectionFile") << qhc
+-                         << QLatin1String("-register") << qch;
+-
+-                    proc->start(app, args);
+-
+-                    if (!proc->waitForFinished(50000)) {
+-                        QMessageBox::critical(0, tr("%1 Help").arg(exe),
+-                            tr("Unable to launch Qt Assistant (%1)").arg(app));
+-                        return false;
+-                    }
 -                }
 -            }
 -            start = false;
 -        }
- 
-         QFileInfo fi(qhc);
-         if (!fi.isReadable()) {
-@@ -139,6 +113,51 @@ bool Assistant::startAssistant()
-             first = false;
-         }
- 
-+        // AppImage start
-+        // AppImage mount location changes on each start. Assistant caches freecad.qhc
-+        // file and sets an absolute path. As a result embedded documentation only works
-+        // on the first AppImage (help) run. Register the .gch file, to overcome the issue.
-+        static bool start = true;
-+        if (start) {
-+            char* appimage = getenv("APPIMAGE");
-+            if (appimage) {
-+                QString qch = doc + exe.toLower() + QLatin1String(".qch");
-+                QFileInfo fi(qch);
-+                if (fi.isReadable()) {
-+                    // Assume documentation is embedded
-+                    // Unregister qch file (path) from previous AppImage run
-+                    QStringList args;
-+
-+                    args << QLatin1String("-collectionFile") << qhc
-+                         << QLatin1String("-unregister") << qch;
-+
-+                    proc->start(app, args);
-+
-+                    if (!proc->waitForFinished(50000)) {
-+                        QMessageBox::critical(0, tr("%1 Help").arg(exe),
-+                            tr("Unable to launch Qt Assistant (%1)").arg(app));
-+                        return false;
-+                    }
-+
-+                    // Register qch file (path) for current AppImage run
-+                    args.clear();
-+
-+                    args << QLatin1String("-collectionFile") << qhc
-+                         << QLatin1String("-register") << qch;
-+
-+                    proc->start(app, args);
-+
-+                    if (!proc->waitForFinished(50000)) {
-+                        QMessageBox::critical(0, tr("%1 Help").arg(exe),
-+                            tr("Unable to launch Qt Assistant (%1)").arg(app));
-+                        return false;
-+                    }
-+                }
-+            }
-+            start = false;
-+        }
-+        // AppImage end
-+
+-        // AppImage end
+-
          QStringList args;
  
          args << QLatin1String("-collectionFile") << qhc
