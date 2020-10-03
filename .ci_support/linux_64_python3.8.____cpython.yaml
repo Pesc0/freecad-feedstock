@@ -1,9 +1,9 @@
 boost_cpp:
-- '1.72'
+- 1.72.0
 channel_sources:
 - conda-forge,defaults
 channel_targets:
-- freecad dev
+- freecad realthunder
 cxx_compiler:
 - gxx
 cxx_compiler_version:

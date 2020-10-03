@@ -1,11 +1,11 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.12'
 boost_cpp:
-- '1.72'
+- 1.72.0
 channel_sources:
 - conda-forge,defaults
 channel_targets:
-- freecad dev
+- freecad realthunder
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
@@ -16,8 +16,6 @@ hdf5:
 - 1.10.6
 macos_machine:
 - x86_64-apple-darwin13.4.0
-macos_min_version:
-- '10.9'
 occt:
 - '7.4'
 pin_run_as_build:
