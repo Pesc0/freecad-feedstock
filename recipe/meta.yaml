@@ -8,8 +8,8 @@ package:
     version: {{ version }}
 
 source:
-    git_url: https://github.com/FreeCAD/FreeCAD
-    git_tag: master
+    git_url: https://github.com/realthunder/FreeCAD
+    git_tag: LinkStage3
         
 
 build:
