@@ -47,7 +47,6 @@ requirements:
         - coin3d
         - pivy
         - pyside2
-        - smesh >=9.7
         - doxygen
         - hdf5
         - xorg-libxt  # [linux]
@@ -69,7 +68,6 @@ requirements:
         - python
         - coin3d
         - pivy
-        - {{ pin_compatible('smesh', max_pin='x.x.x') }}
         - xorg-libxt  # [linux]
         - freetype
         - numpy
