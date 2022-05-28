@@ -1,6 +1,6 @@
 {% set name = "freecad" %}
-{% set version = "0.20.pre" %}
-{% set build_number = 104 %}
+{% set version = "0.20beta1" %}
+{% set build_number = 0 %}
 {% set build_number = build_number + 500 %}  # [FEATURE_DEBUG]
 
 package:
@@ -8,8 +8,8 @@ package:
     version: {{ version }}
 
 source:
-    url: https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/freecad_source.tar.gz
-    # sha256:
+    url: https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/{{ version }}/freecad_source.tar.gz
+    sha256: 77d5d75e46415f6dd1673b50b8d80b6f052e487d919f1b598c776684d04a632f
     patches:
         - qtwebengine_disable_sandbox.patch  # [linux]
 
