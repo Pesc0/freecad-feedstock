@@ -1,4 +1,4 @@
-{% set name = "freecad" %}
+{% set name = "freecadtoponaming" %}
 {% set version = "0.21.pre" %}
 {% set build_number = 47 %}
 {% set build_number = build_number + 500 %}  # [FEATURE_DEBUG]
@@ -8,13 +8,12 @@ package:
     version: {{ version }}
 
 source:
-    url: https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/weekly-builds/freecad_source.tar.gz
+    url: https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/topo-naming/freecad_source.tar.gz
     fn: freecad_source_{{ build_number }}.tar.gz
     # sha256:
     patches:
         - patches/qtwebengine_disable_sandbox.patch  # [linux]
         - patches/disable_git_info.patch
-        # - patches/smesh.patch
         - patches/findcoin3d.patch  # [win]
         - patches/osx_arm64_cross_compiling.patch  # [osx and arm64]
 
