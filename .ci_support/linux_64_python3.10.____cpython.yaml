@@ -3,9 +3,9 @@ boost_cpp:
 cdt_name:
 - cos6
 channel_sources:
-- freecad/label/dev,conda-forge,defaults
+- freecad,conda-forge,defaults
 channel_targets:
-- freecad dev
+- freecad stable
 cxx_compiler:
 - gxx
 cxx_compiler_version:
@@ -17,7 +17,7 @@ freetype:
 hdf5:
 - 1.12.2
 pcl:
-- 1.13.0
+- 1.13.1
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
