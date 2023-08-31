@@ -3,7 +3,7 @@ boost_cpp:
 channel_sources:
 - freecad,conda-forge,defaults
 channel_targets:
-- freecad stable
+- freecad main
 cxx_compiler:
 - vs2019
 freetype:
