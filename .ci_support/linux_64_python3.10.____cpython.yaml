@@ -3,7 +3,7 @@ cdt_name:
 channel_sources:
 - freecad/label/dev,conda-forge,defaults
 channel_targets:
-- freecad dev
+- freecad main
 cxx_compiler:
 - gxx
 cxx_compiler_version:
