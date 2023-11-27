@@ -64,6 +64,7 @@ requirements:
         - ply
         - matplotlib-base
         - yaml-cpp
+        - debugpy
     run:
         - pyside2
         - vtk
@@ -85,6 +86,7 @@ requirements:
         - ply
         - gmsh
         - graphviz
+        - debugpy
     run_constrained:
         - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("11.0") }}   # [osx and arm64]
         - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.13") }}  # [osx and x86_64]
